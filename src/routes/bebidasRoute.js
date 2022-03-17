@@ -10,4 +10,9 @@ router.get("/bebidasBuscar", bebidas.buscarTodasBebidas);
 
 router.post("/bebidasSalvar", bebidas.salvarBebidas);
 
+router.get("/bebidasBuscar/:id", bebidas.buscarPorID);
+
+router.put("/atualizar/:id", bebidas.atualizarBebida);
+
+router.delete("/deletar/:id", bebidas.deletarBebida);
 export default router;

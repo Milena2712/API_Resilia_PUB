@@ -1,4 +1,4 @@
-import bebidas from "./bebidasRoute.js";
+import bebidas from "../routes/bebidasRoute.js";
 
 export default (app) => {
   app.use(bebidas);
