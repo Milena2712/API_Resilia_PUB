@@ -6,11 +6,11 @@ const bebidas = new BebidasController();
 
 router.post("/criarTabela", bebidas.criarTabela);
 
-router.get("/bebidasBuscar", bebidas.buscarTodasBebidas);
+router.get("/bebidasBuscar", bebidas.buscarBebidas);
 
-router.post("/bebidasSalvar", bebidas.salvarBebidas);
+router.post("/bebidasSalvar", bebidas.inserirBebida);
 
-router.get("/bebidasBuscar/:id", bebidas.buscarPorID);
+router.get("/bebidasBuscar/:id", bebidas.bucarBebidaPorId);
 
 router.put("/atualizar/:id", bebidas.atualizarBebida);
 
