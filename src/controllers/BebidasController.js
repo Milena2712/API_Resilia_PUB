@@ -1,6 +1,5 @@
-import { bdBebidas } from "../model/bebidas.js";
 import MetodosBebidas from "../DAO/MetodosBebidas.js";
-import { verificaDadosBebidas } from "../services/verificaDadosValidos.js";
+import * as verificaEntradas from "../services/verificaEntradas.js";
 
 const metodos = new MetodosBebidas();
 
@@ -15,18 +14,36 @@ class BebidasController {
 
   //Método Create --------------------
   async inserirBebida(req, res) {
-    const bebida = await new Promise((resolve, reject) => {
-      resolve([req.body.nome, req.body.tipo, req.body.valor]);
+    try {
+      const bebida = await new Promise((resolve, reject) => {
+        resolve([req.body.nome, req.body.tipo, req.body.valor]);
 
-      reject("Não foi possivel pegar as informações da bebida");
-    });
+        reject("Não foi possivel pegar as informações da bebida");
+      });
 
-    metodos
-      .inserirBebida(...bebida)
-      .then((response) => res.send(response))
-      .catch((response) => res.send(response));
+      const nomeEmBranco = verificaEntradas.verificaCampoEmBranco(bebida[0]);
+      const tipoEmBranco = verificaEntradas.verificaCampoEmBranco(bebida[1]);
+      const valorEmBranco = verificaEntradas.verificaCampoEmBranco(bebida[2]);
+      const qntCaracter = verificaEntradas.verificaQntDeCaracter(bebida[1]);
+
+      if (!nomeEmBranco) {
+        throw new Error("O campo nome não pode ficar em branco");
+      } else if (!tipoEmBranco) {
+        throw new Error("O campo tipo não pode ficar em branco");
+      } else if (!valorEmBranco) {
+        throw new Error("O campo valor não pode ficar em branco");
+      } else if (!qntCaracter) {
+        throw new Error("O campo tipo não pode ter menos de 3 caracteres");
+      } else {
+        metodos
+          .inserirBebida(...bebida)
+          .then((response) => res.send(response))
+          .catch((response) => res.send(response));
+      }
+    } catch (e) {
+      res.status(400).send(e.message);
+    }
   }
-
   //Método Read ----------------------
   async buscarBebidas(req, res) {
     metodos
