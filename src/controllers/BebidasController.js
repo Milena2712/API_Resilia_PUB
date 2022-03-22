@@ -45,7 +45,7 @@ class BebidasController {
     }
   }
   //Método Read ----------------------
-  async buscarBebidas(req, res) {
+  buscarBebidas(req, res) {
     metodos
       .buscarBebidas()
       .then((response) => res.send(response))
