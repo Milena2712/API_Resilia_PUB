@@ -4,6 +4,7 @@
  # Sobre o projeto
 <p> Desenvolvimento de uma API com o tema PUB, onde você consegue utilizar o CRUD(criar, atualizar, pesquisar e excluir registros da bebida).
  </p>
+ <p>API desponibilizada no <b>Heroku:</b> https://apiresilia.herokuapp.com/bebidasBuscar</p>
  
  <li> Ferramentas Utilizadas</li><br>
 <p style="display: inline_block">
