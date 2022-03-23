@@ -1,4 +1,4 @@
-import MetodosBebidas from "../DAO/MetodosBebidas.js";
+import MetodosBebidas from "../DAO/metodosBebidas.js";
 import * as verificaEntradas from "../services/verificaEntradas.js";
 
 const metodos = new MetodosBebidas();
