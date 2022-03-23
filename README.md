@@ -67,7 +67,7 @@ npm start
   ```
   
   # Colaboradores 🖥️ 🇧🇷
- <p>Apesar da API Rest ser criada por cada colaborador realizar separadamente sua parte, o trabalho foi organizado em grupo</p>
+ <p>Apesar da API Rest ser criada para cada colaborador realizar separadamente sua parte, o trabalho foi organizado em grupo</p>
  <li> Matheus Camba (https://github.com/MatheusCamba) </li> 
  <li> Hugo Parada (https://github.com/haparada9)</li>
  <li> Arcenio Souza (https://github.com/ArcenioSouza)</li> 
