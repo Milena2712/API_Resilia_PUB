@@ -1,6 +1,9 @@
 {
   "name": "projeto_mod4api",
   "version": "1.0.0",
+  "engines": {
+    "node": "17.1.0"
+  },
   "description": "Modulo4 api",
   "main": "./src/app.js",
   "scripts": {
