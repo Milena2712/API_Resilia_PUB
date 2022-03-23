@@ -5,10 +5,8 @@ const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-const port = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3000;
 
-app.listen(process.env.PORT || 3000, () =>
-  console.log(`Servidor funcionando na porta ${port}`)
-);
+app.listen(PORT, () => console.log(`Servidor funcionando na porta ${PORT}`));
 
 routes(app);
